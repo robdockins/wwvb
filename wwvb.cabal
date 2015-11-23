@@ -1,0 +1,49 @@
+name:                wwvb
+version:             0.1
+synopsis:            
+description:         Please see README.md
+homepage:            http://github.com/robdockins/wwvb
+license:             BSD3
+license-file:        LICENSE
+author:              Rob Dockins
+maintainer:          robdockins AT fastmail DOT fm
+copyright:           2015
+category:            Time
+build-type:          Simple
+cabal-version:       >=1.10
+-- extra-source-files:
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     
+     Time.WWVB
+  build-depends:
+     base >= 4.7 && < 5,
+     bytestring,
+     base64-bytestring
+                     
+  default-language:    Haskell2010
+
+-- executable wwvb-exe
+--   hs-source-dirs:      src
+--   main-is:             Main.hs
+--   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+--   build-depends:       base
+--                      , wwvb
+--   default-language:    Haskell2010
+
+test-suite wwvb-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             Test.hs
+  build-depends:
+     base,
+     wwvb,
+     bytestring,
+     base64-bytestring
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/robdockins/wwvb
